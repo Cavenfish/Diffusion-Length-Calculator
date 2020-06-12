@@ -95,3 +95,18 @@ plt.xlabel('Injection Time (s)')
 plt.ylabel('Diffusion Length (μm)')
 plt.show()
 plt.close()
+
+
+I = 250e-6
+A = 5e23
+
+q = cd.get_charge_density(I,A,times[6:])
+
+
+plt.errorbar(q, means[6:], sigs[6:], label='Data', fmt='o')
+plt.title('Diffusion Length versus Charge Density')
+plt.xlabel(r'Charge Density ($\frac{C}{m^3}$)')
+plt.ylabel('Diffusion Length (μm)')
+plt.ylim((0,0.4))
+plt.show()
+plt.close()

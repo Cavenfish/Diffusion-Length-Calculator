@@ -12,6 +12,12 @@ def linear(x, m, b):
 def actE(c, E, A):
     return A* np.exp(-E/c)
 
+def get_charge_density(I, A, times):
+    q = []
+    for t in times:
+        q.append((I*t)/A)
+    return q
+
 def fit_data(file, op, sp, fp, tp, save_name=None, neg=1):
     x  = 'x(um)'
     y  = 'EBIC(V)'
